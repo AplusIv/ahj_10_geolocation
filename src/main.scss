@@ -1,0 +1,140 @@
+
+.logo1 {
+  width: 10em;
+}
+
+.logo2 {
+  width: 10em;
+}
+
+.collapse {
+  background-color: lightgray;
+  overflow: hidden;
+}
+
+.collapse-initial {
+  display: none;
+}
+
+/* .collapse:hover {
+  animation-name: collapse;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-duration: infinite;
+} */
+
+/* .collapse-animation {
+  animation-name: collapse;
+  animation-duration: 3s;
+  animation-timing-function: ease;
+} */
+
+.collapse-first {
+  max-height: 0px;
+}
+
+.collapse-animation {
+  
+  transition-property: max-height;
+  transition-duration: 2s;
+  transition-timing-function: ease;
+
+  max-height: 300px; 
+
+  
+}
+
+.collapse-animation-reverse {
+  
+  transition-property: max-height;
+  transition-duration: 2s;
+  transition-timing-function: ease;
+
+  max-height: 0px; 
+
+  
+}
+
+@keyframes collapse {
+  from {
+    max-height: 0%;
+  }
+  40% {
+    max-height: 30px;
+  }
+  to {
+    max-height: 200px;
+  }
+}
+
+
+
+
+
+.container {
+  // display: flex;
+  // flex-direction: column;
+  // display: flex; 
+  // justify-content: center;
+  height: 500px;
+  padding: 10px;
+}
+
+.post {
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 5px;
+  width: 85%;
+  height: 100px;
+  // margin: 0 auto;
+  background-color: grey;
+  border-radius: 5px;
+}
+
+.post-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-post {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+}
+
+textarea {
+  width: -webkit-fill-available;
+}
+
+.geolocation:after {
+  content: '\2716';
+}
+
+.modal {
+  // display: none;
+
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 5px;
+  width: 40%;
+  min-height: 200px;
+  
+  background-color: yellow;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
