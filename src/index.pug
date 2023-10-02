@@ -23,13 +23,14 @@ html(lang= 'ru')
       //- <textarea name="new-note" class="textarea-new" rows="5" placeholder="Введите текст новой заметки"
       //-       required></textarea>
       //-     <button name="add-button" class="add-button" type="button">Add card</button>
-    .modal
+    form(class="modal modal-hidden" novalidate) 
       .modal-text Что-то пошло не так
       .add-coords
-        textarea(name="coords", class="textarea" rows="2" placeholder="Введите ширину и долготу через запятую") 
+        //- textarea(name="coords", class="textarea" rows="2" placeholder="Введите ширину и долготу через запятую" required) 
+        input(class="textarea" type="text" placeholder="Введите ширину и долготу через запятую" required)
         .modal-buttons
-          button(class="btn" type="button") ОК
-          button(class="btn" type="button") Отмена
+          button(class="btn btn-submit" type="submit") ОК
+          button(class="btn btn-close" type="button") Отмена
 
     //- p 
     //-   a(href="//google.com" class="btn") Link with href

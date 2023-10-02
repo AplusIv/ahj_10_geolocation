@@ -76,7 +76,7 @@
   // flex-direction: column;
   // display: flex; 
   // justify-content: center;
-  height: 500px;
+  min-height: 500px;
   padding: 10px;
 }
 
@@ -87,7 +87,7 @@
   margin-bottom: 15px;
   padding: 5px;
   width: 85%;
-  height: 100px;
+  // height: 100px;
   // margin: 0 auto;
   background-color: grey;
   border-radius: 5px;
@@ -134,7 +134,20 @@ textarea {
   border-radius: 5px;
 }
 
+.modal-hidden {
+  display: none;
+}
+
 .modal-buttons {
   display: flex;
   justify-content: space-between;
+}
+
+.form-error {
+  position: absolute;
+  padding: 5px 10px;
+  width: 200px;
+  background: #fff;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+  z-index: 999;
 }

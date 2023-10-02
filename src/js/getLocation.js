@@ -1,5 +1,5 @@
-export default function getLocation(textField) {
-  if (navigator.geolocation) {
+export default function getLocation(geolocationField) {
+  /* if (navigator.geolocation) {
     // console.log(navigator.geolocation);
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -11,6 +11,49 @@ export default function getLocation(textField) {
       textField = `[${latitude}: ${longitude}]`;
     }, (err) => {console.log(err);},
     { enableHighAccuracy: true})
+  } */
+
+  let positionCheck = {
+    position: true,
+    error: false,
+  };
+
+  if (navigator.geolocation) {
+    (() => {
+      const result = {
+        // position: ,
+        // error,
+      };
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+        const { latitude, longitude } = position.coords;
+    
+        console.log('latitude ' + latitude);
+        console.log('longitude ' + longitude);
+        // post.querySelector('.geolocation').textContent = `[${latitude}, ${longitude}]`;
+        // return `[${latitude}: ${longitude}]`;
+        result.position = `[${latitude}, ${longitude}]`;
+        positionCheck = result;
+        console.log(positionCheck); 
+        geolocationField = positionCheck.position;
+        this.container.firstElementChild.appendChild(post);
+      }, (err) => {
+        // return err
+        console.log(err);
+        result.error = err;
+        console.log(result.error);
+        positionCheck = result;
+        console.log(positionCheck);              
+        this.showModal();
+        // return err;
+      },
+      { enableHighAccuracy: true});
+      // return result;
+      // console.log(result);
+      // positionCheck = result;
+      // console.log(positionCheck);
+    })();
   }
 }
 
