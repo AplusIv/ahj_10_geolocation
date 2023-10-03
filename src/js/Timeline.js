@@ -10,10 +10,10 @@ export default class Timeline {
     this.addPost = this.addPost.bind(this);
     this.container.addEventListener('click', this.addPost);
 
-    /* this.close = this.close.bind(this);
-    this.validationForm.form.addEventListener('click', this.close); */
-    this.validateData = this.validateData.bind(this);
-    this.validationForm.form.addEventListener('click', this.validateData);
+    this.closeModal = this.closeModal.bind(this);
+    this.validationForm.form.addEventListener('click', this.closeModal);
+    /* this.validateData = this.validateData.bind(this);
+    this.validationForm.form.addEventListener('click', this.validateData); */
   }
 
   addPost(e) {
@@ -105,8 +105,8 @@ export default class Timeline {
               console.log(positionCheck);              
               this.showModal();
 
-              // this.close(e);
-              this.validateData(e)
+              this.closeModal(e);
+              // this.validateData(e)
 
               // if (this.validationForm.coords) {
               //   post.querySelector('.geolocation').textContent = this.validationForm.coords;
@@ -150,15 +150,17 @@ export default class Timeline {
     }
   }
 
-  validateData(e) {
+  closeModal(e) {
     e.preventDefault;
     console.log(this);
     if (e.target.classList.contains('btn-submit')) {
       console.log('сохраню координаты и закрою');
       console.log('а вот и координаты после проверки' + this.validationForm.coords);
       console.log(this.newPost);
-      this.newPost.querySelector('.geolocation').textContent = this.validationForm.coords;
-      this.container.firstElementChild.appendChild(this.newPost);      
+      if (this.validationForm.coords) {
+        this.newPost.querySelector('.geolocation').textContent = this.validationForm.coords;
+        this.container.firstElementChild.appendChild(this.newPost);  
+      }
     }
   }
 
