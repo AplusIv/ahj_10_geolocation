@@ -9,7 +9,7 @@
     "dev": "webpack --mode development",
     "watch": "forever -w ./src/js/app.js",
     "lint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --testPathPattern=./src/"
   },
   "repository": {
     "type": "git",
@@ -32,6 +32,7 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-jest": "^27.4.2",
     "eslint-plugin-prettier": "^4.2.1",
     "filemanager-webpack-plugin": "^8.0.0",
     "forever": "^4.0.3",
@@ -43,6 +44,7 @@
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^10.0.1",
+    "jest": "^29.7.0",
     "koa": "^2.14.2",
     "koa-body": "^6.0.1",
     "mini-css-extract-plugin": "^2.7.6",

@@ -4,8 +4,8 @@ export default class ValidationForm {
     this.validateCoords = validateCoords;
 
     this.validateData = this.validateData.bind(this);
-    this.form.addEventListener('submit', this.validateData); 
-    
+    this.form.addEventListener('submit', this.validateData);
+
     this.close = this.close.bind(this);
     this.form.addEventListener('click', this.close);
   }
@@ -20,15 +20,15 @@ export default class ValidationForm {
 
     if (first.value) {
       // console.log('submit');
-      const valid = this.validateCoords(first.value);
-      console.log('validateCoords вернула ' + valid);
+      const valid = this.validateCoords(first.value, this.coords);
+      console.log(`validateCoords вернула ${valid}`);
       if (!valid) {
         first.setCustomValidity('Ошибка в переданных координатах');
         console.log(first.validity.valid);
       } else {
         console.log('submit');
-        this.coords = first.value;
-        console.log(this.coords);
+        // this.coords = first.value;
+        // console.log(this.coords);
         // Добавить реплейсер координат регуляркой
         first.value = '';
         this.form.classList.add('modal-hidden'); // закрываем модалку
@@ -59,7 +59,8 @@ export default class ValidationForm {
 
       first.value = '';
 
-      return;
+      // return; // !!!!!
+
       // console.log(ValidityState.valid);
     }
   }

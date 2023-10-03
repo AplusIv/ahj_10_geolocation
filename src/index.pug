@@ -9,14 +9,14 @@ html(lang= 'ru')
       .post-container
         .post 
           .post-content
-            .post-text Первая заметка
-            .post-time-data 15.09.20 10:37
-          .geolocation [51.02, -0.12]
-        .post 
-          .post-content
             .post-text Вторая заметка
             .post-time-data 25.12.21 19:05
           .geolocation [61.02545, 0.12745]
+        .post 
+          .post-content
+            .post-text Первая заметка
+            .post-time-data 15.09.20 10:37
+          .geolocation [51.02, -0.12]        
       .add-post
         textarea(name="new-post", class="textarea" rows="1" placeholder="Введите текст новой заметки") 
         button(class="btn" type="button") Добавить заметку
@@ -32,21 +32,15 @@ html(lang= 'ru')
           button(class="btn btn-submit" type="submit") ОК
           button(class="btn btn-close" type="button") Отмена
 
-    //- p 
-    //-   a(href="//google.com" class="btn") Link with href
-    //-   button(class="btn" type='button') Button
-    //- .collapse.collapse-first 
-    //-   .collapse-text Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-
-    p Файл откомпилирован шаблонизатором Pug
-    .subscribe
-      form(class='subscribe-form' method='POST' action="http://localhost:7070") 
-        input(class="name" name="name" class="input" required)
-        input(class="phone" name="phone" class="input" required)
-        button(class="btn") Записаться
-        button(class="unsubscribe-btn") Отписаться
-    .logo-png
-      img.logo1(src=require('./images/image.png') alt='Загрузка PNG изображений с помощью Webpack')
-      //- изображение запрашивается как модуль
-    .logo-svg
-      img.logo2(src=require('./images/logo.svg'), alt='Загрузка SVG изображений с помощью Webpack')
+    //- p Файл откомпилирован шаблонизатором Pug
+    //- .subscribe
+    //-   form(class='subscribe-form' method='POST' action="http://localhost:7070") 
+    //-     input(class="name" name="name" class="input" required)
+    //-     input(class="phone" name="phone" class="input" required)
+    //-     button(class="btn") Записаться
+    //-     button(class="unsubscribe-btn") Отписаться
+    //- .logo-png
+    //-   img.logo1(src=require('./images/image.png') alt='Загрузка PNG изображений с помощью Webpack')
+    //-   //- изображение запрашивается как модуль
+    //- .logo-svg
+    //-   img.logo2(src=require('./images/logo.svg'), alt='Загрузка SVG изображений с помощью Webpack')

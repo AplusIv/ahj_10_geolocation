@@ -1,7 +1,7 @@
 export default class PostModule {
-  constructor() {
+  // constructor() {
 
-  }
+  // }
 
   static creatPost() {
     const post = document.createElement('div');
@@ -34,8 +34,6 @@ export default class PostModule {
     const month = (date.getMonth() + 1 < 10) ? `0${date.getMonth() + 1}` : `${date.getMonth() + 1}`;
     const minutes = (date.getMinutes() < 10) ? `0${date.getMinutes()}` : `${date.getMinutes()}`;
     const hours = (date.getHours() < 10) ? `0${date.getHours()}` : `${date.getHours()}`;
-
-
 
     const postTime = `${dateNumber}.${month}.${date.getFullYear()} ${hours}:${minutes}`;
     return postTime;

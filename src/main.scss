@@ -1,75 +1,11 @@
-
+/* 
 .logo1 {
   width: 10em;
 }
 
 .logo2 {
   width: 10em;
-}
-
-.collapse {
-  background-color: lightgray;
-  overflow: hidden;
-}
-
-.collapse-initial {
-  display: none;
-}
-
-/* .collapse:hover {
-  animation-name: collapse;
-  animation-duration: 2s;
-  animation-timing-function: ease;
-  animation-duration: infinite;
 } */
-
-/* .collapse-animation {
-  animation-name: collapse;
-  animation-duration: 3s;
-  animation-timing-function: ease;
-} */
-
-.collapse-first {
-  max-height: 0px;
-}
-
-.collapse-animation {
-  
-  transition-property: max-height;
-  transition-duration: 2s;
-  transition-timing-function: ease;
-
-  max-height: 300px; 
-
-  
-}
-
-.collapse-animation-reverse {
-  
-  transition-property: max-height;
-  transition-duration: 2s;
-  transition-timing-function: ease;
-
-  max-height: 0px; 
-
-  
-}
-
-@keyframes collapse {
-  from {
-    max-height: 0%;
-  }
-  40% {
-    max-height: 30px;
-  }
-  to {
-    max-height: 200px;
-  }
-}
-
-
-
-
 
 .container {
   // display: flex;

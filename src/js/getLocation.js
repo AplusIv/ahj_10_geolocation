@@ -1,10 +1,23 @@
+/* ??? Изначально хотел использовать отдельным компонентом (функция getLocation)
+получение геопозиции,
+ но не получается вернуть из navigator.geolocation.getCurrentPosition() данные.
+ Не могу вернуть данные из колбеков, чтобы их потом подставить в новый пост.
+ Попробовал это сделать в основном классе Timeline, но там тоже проблемы
+ на этапе ручного ввода данных. Могу только их записать в поля классов,
+ но запись происходит одновременно вместе с событием Submit и закрытием модального окна,
+ и эти данные на момент подстановки undefined (записываю в this.coords класса ValidationForm)
+ Как мне доработать класс Timeline или ValidtionForm, чтобы подхватить эти данные?
+ В идеале, наверное просто вернуть.
+ Требуется ваша поддержка и помощь:)
+*/
+
 export default function getLocation(geolocationField) {
   /* if (navigator.geolocation) {
     // console.log(navigator.geolocation);
     navigator.geolocation.getCurrentPosition(
       (position) => {
       const { latitude, longitude } = position.coords;
-  
+
       console.log('latitude ' + latitude);
       console.log('longitude ' + longitude);
       console.log(textField);
@@ -27,28 +40,30 @@ export default function getLocation(geolocationField) {
 
       navigator.geolocation.getCurrentPosition(
         (position) => {
-        const { latitude, longitude } = position.coords;
-    
-        console.log('latitude ' + latitude);
-        console.log('longitude ' + longitude);
-        // post.querySelector('.geolocation').textContent = `[${latitude}, ${longitude}]`;
-        // return `[${latitude}: ${longitude}]`;
-        result.position = `[${latitude}, ${longitude}]`;
-        positionCheck = result;
-        console.log(positionCheck); 
-        geolocationField = positionCheck.position;
-        this.container.firstElementChild.appendChild(post);
-      }, (err) => {
+          const { latitude, longitude } = position.coords;
+
+          console.log(`latitude ${latitude}`);
+          console.log(`longitude ${longitude}`);
+          // post.querySelector('.geolocation').textContent = `[${latitude}, ${longitude}]`;
+          // return `[${latitude}: ${longitude}]`;
+          result.position = `[${latitude}, ${longitude}]`;
+          positionCheck = result;
+          console.log(positionCheck);
+          // geolocationField = positionCheck.position;
+          // this.container.firstElementChild.appendChild(post);
+        },
+        (err) => {
         // return err
-        console.log(err);
-        result.error = err;
-        console.log(result.error);
-        positionCheck = result;
-        console.log(positionCheck);              
-        this.showModal();
+          console.log(err);
+          result.error = err;
+          console.log(result.error);
+          positionCheck = result;
+          console.log(positionCheck);
+          this.showModal();
         // return err;
-      },
-      { enableHighAccuracy: true});
+        },
+        { enableHighAccuracy: true },
+      );
       // return result;
       // console.log(result);
       // positionCheck = result;
@@ -66,7 +81,7 @@ export default function getLocation(geolocationField) {
     answer = navigator.geolocation.getCurrentPosition(
       (data) => {
       const { latitude, longitude } = data.coords;
-  
+
       console.log('latitude ' + latitude);
       console.log('longitude ' + longitude);
       console.log(`[${latitude}: ${longitude}]`);
@@ -85,4 +100,3 @@ export default function getLocation(geolocationField) {
   // return coords;
   return null;
 } */
-
