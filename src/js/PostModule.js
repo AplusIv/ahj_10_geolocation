@@ -1,3 +1,5 @@
+const geo = require('../images/geolocation.png');
+
 export default class PostModule {
   // constructor() {
 
@@ -19,11 +21,21 @@ export default class PostModule {
     const geolocation = document.createElement('div');
     geolocation.classList.add('geolocation');
 
+    const geolocationIcon = document.createElement('div');
+    geolocationIcon.classList.add('geolocation-icon');
+
+    const img = document.createElement('img');
+    img.classList.add('geo-icon');
+    img.src = geo;
+
+    geolocationIcon.appendChild(img);
+
     postContent.appendChild(postText);
     postContent.appendChild(postTimeData);
 
     post.appendChild(postContent);
     post.appendChild(geolocation);
+    post.appendChild(geolocationIcon);
 
     return post;
   }

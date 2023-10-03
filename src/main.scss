@@ -44,8 +44,12 @@ textarea {
   width: -webkit-fill-available;
 }
 
-.geolocation:after {
+/* .geolocation:after {
   content: '\2716';
+} */
+
+.geo-icon {
+  width: 15px;
 }
 
 .modal {
