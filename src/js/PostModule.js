@@ -18,6 +18,9 @@ export default class PostModule {
     const postTimeData = document.createElement('div');
     postTimeData.classList.add('post-time-data');
 
+    const geolocationContainer = document.createElement('div');
+    geolocationContainer.classList.add('geolocation-container');
+
     const geolocation = document.createElement('div');
     geolocation.classList.add('geolocation');
 
@@ -29,13 +32,16 @@ export default class PostModule {
     img.src = geo;
 
     geolocationIcon.appendChild(img);
+    geolocationContainer.appendChild(geolocationIcon);
+    geolocationContainer.appendChild(geolocation);
 
     postContent.appendChild(postText);
     postContent.appendChild(postTimeData);
 
     post.appendChild(postContent);
-    post.appendChild(geolocation);
-    post.appendChild(geolocationIcon);
+    post.appendChild(geolocationContainer);
+    // post.appendChild(geolocation);
+    // post.appendChild(geolocationIcon);
 
     return post;
   }

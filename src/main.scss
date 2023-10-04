@@ -32,6 +32,7 @@
 .post-content {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 15px;
 }
 
 .add-post {
@@ -90,4 +91,13 @@ textarea {
   background: #fff;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
   z-index: 999;
+}
+
+.geolocation-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.geolocation-icon {
+  margin-right: 5px;
 }
