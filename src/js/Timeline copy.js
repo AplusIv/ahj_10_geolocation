@@ -1,10 +1,9 @@
 export default class Timeline {
-  constructor(container, postModule, validationForm, geolocation) {
+  constructor(container, postModule, validationForm) {
     this.container = container;
     this.postModule = postModule;
     // this.getLocation = getLocation;
     this.validationForm = validationForm;
-    this.geolocation = geolocation;
 
     this.addPost = this.addPost.bind(this);
     this.container.addEventListener('click', this.addPost);
@@ -13,58 +12,6 @@ export default class Timeline {
     this.validationForm.form.addEventListener('click', this.closeModal);
     /* this.validateData = this.validateData.bind(this);
     this.validationForm.form.addEventListener('click', this.validateData); */
-  }
-
-  async getValidCoords() {
-    const result = await this.validationForm.promise2();
-    console.log(`данные после введения вручную, полученные из промиса ${result}`);
-    return null;
-  }
-
-  async getCoordinates(callback, post) {
-    try {
-      const positionData = await this.geolocation();
-      const { latitude, longitude } = positionData.coords;
-
-      console.log(`latitude ${latitude}`);
-      console.log(`longitude ${longitude}`);
-      // post.querySelector('.geolocation').textContent = `[${latitude}, ${longitude}]`;
-      // return `[${latitude}: ${longitude}]`;
-      // result.position = `[${latitude}, ${longitude}]`;
-      // positionCheck = result;
-      // console.log(positionCheck);
-      console.log(`Готов отдавать координаты [${latitude}, ${longitude}]`);
-      const result = `[${latitude}, ${longitude}]`;
-
-      callback(result, post);
-
-      return true;
-      // return `[${latitude}, ${longitude}]`;
-
-      // geolocationField = positionCheck.position;
-      // this.container.firstElementChild.appendChild(post);
-    } catch (e) {
-      // eventBus.emit('show-modal');
-      console.log(e);
-      this.showModal();
-      // await this.validationForm.promise();
-      // return null;
-      // this.getValidCoords();
-      // this.validationForm.getValidCoords();
-      return null;
-      // return this.getValidCoords();
-    }
-    // const result = await this.validationForm.promise2();
-    // console.log('данные после ошибки геоданных, полученные из промиса ' + result);
-    // return null;
-  }
-
-  static fillCoords(coords, post) {
-    const element = post;
-    element.querySelector('.geolocation').textContent = coords;
-    // this.container.firstElementChild.appendChild(post);
-    // this.container.firstElementChild.insertAdjacentElement('afterbegin', element);
-    document.querySelector('.post-container').insertAdjacentElement('afterbegin', element);
   }
 
   addPost(e) {
@@ -81,19 +28,6 @@ export default class Timeline {
         post.querySelector('.post-time-data').textContent = this.postModule.postTime; // не вызываем, потому что гетер
 
         this.newPost = post;
-
-        const positionCheck = this.getCoordinates(Timeline.fillCoords, post);
-
-        // this.getValidCoords();
-
-        // this.container.firstElementChild.insertAdjacentElement('afterbegin', post);
-
-        /* if (typeof positionCheck === 'string') {
-          post.querySelector('.geolocation').textContent = positionCheck;
-          // this.container.firstElementChild.appendChild(post);
-          this.container.firstElementChild.insertAdjacentElement('afterbegin', post);
-        } */
-
         // post.querySelector('.geolocation').textContent = this.getLocation();
 
         // const geolocationField = post.querySelector('.geolocation').textContent;
@@ -133,7 +67,7 @@ export default class Timeline {
         },
         { enableHighAccuracy: true}); */ // Готовый вариант
 
-        /* let positionCheck = {
+        let positionCheck = {
           position: true,
           error: false,
         };
@@ -186,7 +120,7 @@ export default class Timeline {
             // positionCheck = result;
             // console.log(positionCheck);
           })();
-        } */ // 3-й вариант
+        } // 3-й вариант
 
         // error geolocation
 

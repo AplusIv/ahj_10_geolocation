@@ -2,6 +2,9 @@ export default class ValidationForm {
   constructor(form, validateCoords) {
     this.form = form;
     this.validateCoords = validateCoords;
+    this.formatedCoords = '[]';
+
+    // this.coords = '';
 
     this.validateData = this.validateData.bind(this);
     this.form.addEventListener('submit', this.validateData);
@@ -10,6 +13,30 @@ export default class ValidationForm {
     this.form.addEventListener('click', this.close);
   }
 
+  getCoords(coords) {
+    // const element = post;
+    // element.querySelector('.geolocation').textContent = coords;
+    this.formatedCoords = coords;
+  }
+
+  // promise(coords) {
+  //   return new Promise((resolve, reject) => {
+  //     resolve(coords);
+  //   });
+  // }
+
+  promise2() {
+    return new Promise((resolve, reject) => {
+      resolve(this.formatedCoords);
+    });
+  }
+
+  /* async getValidCoords() {
+    const result = await this.promise();
+    console.log(`данные после введения вручную, полученные из промиса ${result}`);
+  } */
+
+  // eslint-disable-next-line consistent-return
   validateData(e) {
     e.preventDefault();
 
@@ -20,7 +47,10 @@ export default class ValidationForm {
 
     if (first.value) {
       // console.log('submit');
-      const valid = this.validateCoords(first.value, this.coords);
+      // const valid = this.validateCoords(first.value, this.coords);
+      // const valid = this.validateCoords(first.value);
+      const valid = this.validateCoords(first.value, this.getCoords);
+
       console.log(`validateCoords вернула ${valid}`);
       if (!valid) {
         first.setCustomValidity('Ошибка в переданных координатах');
@@ -30,9 +60,22 @@ export default class ValidationForm {
         // this.coords = first.value;
         // console.log(this.coords);
         // Добавить реплейсер координат регуляркой
+        // const FormatedCoords = this.getCoords;
+        this.formatedCoords = valid;
+        console.log(this.formatedCoords);
+
         first.value = '';
         this.form.classList.add('modal-hidden'); // закрываем модалку
-        return;
+        // return coords;
+        // return;
+        // return new Promise((resolve, reject) => {
+        //   resolve(coords);
+        // });
+
+        // console.log(this.promise(this.formatedCoords));
+        // return this.promise(this.formatedCoords);
+        console.log(this.promise2());
+        return this.promise2();
       }
     }
 

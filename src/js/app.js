@@ -3,13 +3,14 @@ import PostModule from './PostModule';
 // import getLocation from "./getLocation";
 import ValidationForm from './ValidationForm';
 import validateCoords from './validateCoords';
+import geolocation from './geolocation';
 
 const container = document.querySelector('.container');
 const form = document.querySelector('.modal');
 console.log(form);
 const validationForm = new ValidationForm(form, validateCoords);
 
-const timeline = new Timeline(container, PostModule, validationForm);
+const timeline = new Timeline(container, PostModule, validationForm, geolocation);
 console.log(timeline);
 
 // Хранение

@@ -9,7 +9,7 @@
   return /^\[?\-?\d{1,2}\.\d{1,}\,\s?\-?\d{1,3}\.\d{1,}\]?$/gm.test(value);
 } */
 
-export default function validateCoords(str, formatedCoords) {
+export default function validateCoords(str) {
   // const string = `${str}`
   // const result = str.match(/^\[?(\-?\d{1,2}\.\d{1,})\,\s?(\-?\d{1,3}\.\d{1,})\]?$/);
 
@@ -20,9 +20,11 @@ export default function validateCoords(str, formatedCoords) {
     const longitude = Number(result[2]);
     if (latitude < 90 && latitude > -90 && longitude < 180 && longitude > -180) {
       // eslint-disable-next-line no-param-reassign
-      formatedCoords = `[${latitude}, ${longitude}]`;
-      console.log(`[${latitude}, ${longitude}]`);
-      return true;
+      const coords = `[${latitude}, ${longitude}]`;
+      // callback(coords);
+      return coords;
+      // console.log(`[${latitude}, ${longitude}]`);
+      // return true;
     }
   }
   return false;
