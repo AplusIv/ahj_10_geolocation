@@ -9,6 +9,8 @@ export default class Timeline {
     this.addPost = this.addPost.bind(this);
     this.container.addEventListener('click', this.addPost);
 
+    this.container.querySelector('textarea').addEventListener('keyup', this.addPost);
+
     this.closeModal = this.closeModal.bind(this);
     this.validationForm.form.addEventListener('click', this.closeModal);
     /* this.validateData = this.validateData.bind(this);
@@ -20,6 +22,14 @@ export default class Timeline {
     console.log(`данные после введения вручную, полученные из промиса ${result}`);
     return null;
   }
+
+  /* getValidCoords2() {
+    const result = this.validationForm.promise2().then((data) => {
+      console.log(`Цепляем данные из промиса ${data}`);
+    });
+    console.log('Ау');
+    return null;
+  } */
 
   async getCoordinates(callback, post) {
     try {
@@ -47,11 +57,15 @@ export default class Timeline {
       // eventBus.emit('show-modal');
       console.log(e);
       this.showModal();
+      // this.getSome(this.validationForm.getValidCoords2);
+      // this.validationForm.getValidCoords3();
+      // this.getValidCoords2();
       // await this.validationForm.promise();
       // return null;
       // this.getValidCoords();
       // this.validationForm.getValidCoords();
       return null;
+      // return this.getValidCoords2();
       // return this.getValidCoords();
     }
     // const result = await this.validationForm.promise2();
@@ -70,7 +84,7 @@ export default class Timeline {
   addPost(e) {
     e.preventDefault();
 
-    if (e.target.classList.contains('btn')) {
+    if (e.target.classList.contains('btn') || e.code === 'Enter') {
       const textarea = e.target.parentElement.querySelector('textarea');
       const { value } = textarea; // без переносов строки
       if (value) {
@@ -81,10 +95,12 @@ export default class Timeline {
         post.querySelector('.post-time-data').textContent = this.postModule.postTime; // не вызываем, потому что гетер
 
         this.newPost = post;
+        this.validationForm.newPost2 = post;
 
         const positionCheck = this.getCoordinates(Timeline.fillCoords, post);
 
         // this.getValidCoords();
+        // this.getValidCoords2();
 
         // this.container.firstElementChild.insertAdjacentElement('afterbegin', post);
 
@@ -206,14 +222,25 @@ export default class Timeline {
   }
 
   closeModal(e) {
-    // e.preventDefault;
+    // e.preventDefault();
+
     console.log(this);
-    if (e.target.classList.contains('btn-submit')) {
+    if (e.target.classList.contains('btn-send2')) {
+      //
+      // this.validationForm.getValidCoords3().then(data => console.log(data));
+      // console.log(this.validationForm.getValidCoords3().then(data => console.log(data)));
+      // this.validationForm.getValidCoords3();
+      // console.log(this.validationForm.getValidCoords3());
+      // this.validationForm.validateData(e)
+      // this.validationForm.form.submit();
+
       console.log('сохраню координаты и закрою');
-      console.log(`а вот и координаты после проверки ${this.validationForm.coords}`);
+      // console.log(`а вот и координаты после проверки ${this.validationForm.formatedCoords}`);
+      console.log(`а вот и координаты после проверки ${this.validationForm.formatedCoords2}`);
+
       console.log(this.newPost);
-      if (this.validationForm.coords) {
-        this.newPost.querySelector('.geolocation').textContent = this.validationForm.coords;
+      if (this.validationForm.formatedCoords2) {
+        this.newPost.querySelector('.geolocation').textContent = this.validationForm.formatedCoords2;
         // this.container.firstElementChild.appendChild(this.newPost);
         this.container.firstElementChild.insertAdjacentElement('afterbegin', this.newPost);
       }

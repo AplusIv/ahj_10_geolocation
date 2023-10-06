@@ -1,10 +1,9 @@
-import Timeline from './Timeline';
-
 export default class ValidationForm {
   constructor(form, validateCoords) {
     this.form = form;
     this.validateCoords = validateCoords;
     this.formatedCoords2 = '[]';
+
 
     // this.coords = '';
 
@@ -27,38 +26,38 @@ export default class ValidationForm {
   //   });
   // }
 
-  /* getValidCoords2() {
+  getValidCoords2() {
     const result = this.promise2().then((data) => {
       console.log(`Цепляем данные из промиса ${data}`);
     });
     console.log('Ау');
     return null;
-  } */
+  }
 
-  /* promise2(value) {
+  promise2(value) {
     return new Promise((resolve, reject) => {
       console.log('value = ' + value);
       resolve(value);
     });
-  } */
+  }
 
-  /* promise3(value, coordsField) {
+  promise3(value, coordsField) {
     return new Promise((resolve, reject) => {
-      console.log(`value = ${value}`);
+      console.log('value = ' + value);
       resolve(value);
     }).then(data => {
-      console.log(`приветики${data}`);
+      console.log('приветики' + data);
       coordsField = data;
       console.log(coordsField);
     });
-  } */
+  }
 
-  /* async getValidCoords3(coords) {
-    const result = this.promise2().then((data) => {
+  async getValidCoords3(coords) {
+    /* const result = this.promise2().then((data) => {
       console.log(`Цепляем данные из промиса ${data}`);
     });
     console.log('Ау');
-    return null;
+    return null; */
     try {
       // const result = await this.promise2().then((data) => {
       //   console.log(`Цепляем данные из промиса ${data}`);
@@ -70,7 +69,7 @@ export default class ValidationForm {
     } catch (error) {
       console.log('getValidCoords3:' + error);
     }
-  } */
+  }
 
   getValidCoords4() {
     const result = this.promise2().then((data) => {
@@ -79,6 +78,8 @@ export default class ValidationForm {
     });
     console.log('Ау');
   }
+
+  
 
   /* async getValidCoords() {
     const result = await this.promise();
@@ -110,8 +111,8 @@ export default class ValidationForm {
         // console.log(this.coords);
         // Добавить реплейсер координат регуляркой
         // const FormatedCoords = this.getCoords;
-        // this.formatedCoords = valid;
-        const validCoords = valid;
+        
+        this.formatedCoords = valid;
         // console.log(this.formatedCoords);
 
         first.value = '';
@@ -124,18 +125,19 @@ export default class ValidationForm {
 
         // console.log(this.promise(this.formatedCoords));
         // return this.promise(this.formatedCoords);
+        
         // console.log(this.promise2().then(data => console.log('приветики ' + data)));
+        
         // console.log(this.promise2());
         // return this.promise2();
 
         // const userCoords = this.promise2(valid);
-        // const userCoords = this.promise3(valid, this.formatedCoords2);
+        const userCoords = this.promise3(valid, this.formatedCoords2);
 
-        // console.log(userCoords);
-        console.log(this.newPost2);
-        Timeline.fillCoords(validCoords, this.newPost2);
+        console.log(userCoords);
 
-        return true;
+
+        return userCoords;
 
         // return this.promise2().then(data => console.log('приветики ' + data));
       }

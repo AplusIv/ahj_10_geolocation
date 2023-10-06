@@ -4,7 +4,7 @@ html(lang= 'ru')
     meta(charset='utf-8')
     title= 'Быстрый запуск Webpack'
   body
-    div [32.1772375,-129.7764664683]
+    div Для быстрой проверки координат: [32.1772375,-129.7764664683]
     .container
       .post-container
         //- .post 
@@ -23,8 +23,8 @@ html(lang= 'ru')
         //-     img(class="geo-icon" src=require('./images/geolocation.png'), alt="geolocation")
        
       .add-post
-        textarea(name="new-post", class="textarea" rows="1" placeholder="Введите текст новой заметки") 
-        button(class="btn" type="button") Добавить заметку
+        textarea(name="new-post", class="textarea" rows="1" placeholder="Введите текст новой заметки" required)
+        button(class="btn btn-add" type="button") Добавить заметку
       //- <textarea name="new-note" class="textarea-new" rows="5" placeholder="Введите текст новой заметки"
       //-       required></textarea>
       //-     <button name="add-button" class="add-button" type="button">Add card</button>
@@ -35,6 +35,7 @@ html(lang= 'ru')
         input(class="textarea" type="text" placeholder="Введите ширину и долготу через запятую" required)
         .modal-buttons
           button(class="btn btn-submit" type="submit") ОК
+          //- button(class="btn btn-submit" type="submit") Проверить координаты
           button(class="btn btn-close" type="button") Отмена
 
     //- p Файл откомпилирован шаблонизатором Pug
