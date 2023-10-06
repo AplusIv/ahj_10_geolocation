@@ -1,17 +1,4 @@
-/* 
-.logo1 {
-  width: 10em;
-}
-
-.logo2 {
-  width: 10em;
-} */
-
 .container {
-  // display: flex;
-  // flex-direction: column;
-  // display: flex; 
-  // justify-content: center;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -26,8 +13,6 @@
   margin-bottom: 15px;
   padding: 5px;
   width: 85%;
-  // height: 100px;
-  // margin: 0 auto;
   background-color: grey;
   border-radius: 5px;
 }
@@ -47,10 +32,6 @@
 textarea {
   width: -webkit-fill-available;
 }
-
-/* .geolocation:after {
-  content: '\2716';
-} */
 
 .geo-icon {
   width: 15px;

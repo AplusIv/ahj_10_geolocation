@@ -6,47 +6,15 @@ html(lang= 'ru')
   body
     div Для быстрой проверки координат: [32.1772375,-129.7764664683]
     .container
-      .post-container
-        //- .post 
-        //-   .post-content
-        //-     .post-text Вторая заметка
-        //-     .post-time-data 25.12.21 19:05
-        //-   .geolocation [61.02545, 0.12745]
-        //-   .geolocation-icon 
-        //-     img(class="geo-icon" src=require('./images/geolocation.png'), alt="geolocation")
-        //- .post 
-        //-   .post-content
-        //-     .post-text Первая заметка
-        //-     .post-time-data 15.09.20 10:37
-        //-   .geolocation [51.02, -0.12] 
-        //-   .geolocation-icon 
-        //-     img(class="geo-icon" src=require('./images/geolocation.png'), alt="geolocation")
-       
+      .post-container       
       .add-post
         textarea(name="new-post", class="textarea" rows="1" placeholder="Введите текст новой заметки" required)
         button(class="btn btn-add" type="button") Добавить заметку
-      //- <textarea name="new-note" class="textarea-new" rows="5" placeholder="Введите текст новой заметки"
-      //-       required></textarea>
-      //-     <button name="add-button" class="add-button" type="button">Add card</button>
     form(class="modal modal-hidden" novalidate) 
       .modal-text Что-то пошло не так
       .add-coords
-        //- textarea(name="coords", class="textarea" rows="2" placeholder="Введите ширину и долготу через запятую" required) 
         input(class="textarea" type="text" placeholder="Введите ширину и долготу через запятую" required)
         .modal-buttons
           button(class="btn btn-submit" type="submit") ОК
           //- button(class="btn btn-submit" type="submit") Проверить координаты
           button(class="btn btn-close" type="button") Отмена
-
-    //- p Файл откомпилирован шаблонизатором Pug
-    //- .subscribe
-    //-   form(class='subscribe-form' method='POST' action="http://localhost:7070") 
-    //-     input(class="name" name="name" class="input" required)
-    //-     input(class="phone" name="phone" class="input" required)
-    //-     button(class="btn") Записаться
-    //-     button(class="unsubscribe-btn") Отписаться
-    //- .logo-png
-    //-   img.logo1(src=require('./images/image.png') alt='Загрузка PNG изображений с помощью Webpack')
-    //-   //- изображение запрашивается как модуль
-    //- .logo-svg
-    //-   img.logo2(src=require('./images/logo.svg'), alt='Загрузка SVG изображений с помощью Webpack')

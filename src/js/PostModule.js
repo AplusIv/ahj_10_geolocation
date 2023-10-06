@@ -1,10 +1,6 @@
 const geo = require('../images/geolocation.png');
 
 export default class PostModule {
-  // constructor() {
-
-  // }
-
   static creatPost() {
     const post = document.createElement('div');
     post.classList.add('post');
@@ -40,8 +36,6 @@ export default class PostModule {
 
     post.appendChild(postContent);
     post.appendChild(geolocationContainer);
-    // post.appendChild(geolocation);
-    // post.appendChild(geolocationIcon);
 
     return post;
   }
